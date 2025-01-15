@@ -1,0 +1,13 @@
+item.rupee.name=Rupee
+item.rupee5.name=Rupee (5)
+item.rupee10.name=Rupee (10)
+item.rupee50.name=Rupee (50)
+item.rupee100.name=Rupee (100)
+item.rupee500.name=Rupee (500)
+item.rupee1000.name=Rupee (1K)
+item.rupee5000.name=Rupee (5K)
+item.rupee10000.name=Rupee (10K)
+item.rupee50000.name=Rupee (50K)
+item.rupee100000.name=Rupee (100K)
+
+itemGroup.currencyfun=CurrencyFun

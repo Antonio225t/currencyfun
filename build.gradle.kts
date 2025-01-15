@@ -12,7 +12,8 @@ plugins {
 
 val baseGroup: String by project
 val mcVersion: String by project
-val version: String by project
+val version = "${project.version}-MC${mcVersion}"
+project.version = version
 val mixinGroup = "$baseGroup.mixin"
 val modid: String by project
 val transformerFile = file("src/main/resources/accesstransformer.cfg")
@@ -65,8 +66,6 @@ sourceSets.main {
 repositories {
     mavenCentral()
     maven("https://repo.spongepowered.org/maven/")
-    // If you don't want to log in with your real minecraft account, remove this line
-    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
 
 val shadowImpl: Configuration by configurations.creating {
@@ -83,10 +82,6 @@ dependencies {
         isTransitive = false
     }
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT")
-
-    // If you don't want to log in with your real minecraft account, remove this line
-    runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.2.1")
-
 }
 
 // Tasks:
@@ -120,6 +115,7 @@ tasks.processResources {
     }
 
     rename("accesstransformer.cfg", "META-INF/${modid}_at.cfg")
+
 }
 
 
